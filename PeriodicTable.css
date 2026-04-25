@@ -11,9 +11,9 @@ body {
     border: 3px solid black;
     width: 95vw;
     height: 93vh;
-    gap: 4px;
+    gap: 0.3vw;
     padding: 8px;
-    min-height: 500px;
+    min-height: 800px;
 }
 
 .element {
@@ -22,7 +22,7 @@ body {
     grid-template-rows: 0.2fr 2fr 0.5fr;
     align-items: center;
     padding: 2px;
-    gap: 1px;
+    gap: 0.1vh;
     user-select: none;
 }
 
