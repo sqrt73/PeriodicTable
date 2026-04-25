@@ -1,8 +1,6 @@
 body {
-    display: flex;
+    display: grid;
     justify-content: center;
-    align-items: center;
-    height: 95vh;
     padding: 10px;
 }
 
@@ -12,11 +10,58 @@ body {
     grid-template-rows: repeat(7, 1fr) 0.2fr repeat(2, 1fr);
     border: 3px solid black;
     width: 95vw;
-    height: 95vh;
+    height: 93vh;
     gap: 4px;
     padding: 8px;
+    min-height: 500px;
 }
 
 .element {
-    border: 1px solid red;
+    border: 1px solid black;
+    display: grid;
+    grid-template-rows: 0.2fr 2fr 0.5fr;
+    align-items: center;
+    padding: 2px;
+    gap: 1px;
+    user-select: none;
+}
+
+.LaLu {
+    display: flex;
+    border: 1px solid black;
+    background-color: #63ffb9;
+    font-size: 1.2vw;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    user-select: none;
+}
+
+.AcLr {
+    display: flex;
+    border: 1px solid black;
+    background-color: #ff63dd;
+    font-size: 1.2vw;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    user-select: none;
+}
+
+.an {
+    text-align: right;
+    font-size: 1vw;
+    justify-content: center;
+}
+.es {
+    display: flex;
+    text-align: center;
+    justify-self: center;
+    font-size: 2vw;
+}
+.am {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 1vw;
 }
