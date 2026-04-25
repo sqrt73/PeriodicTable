@@ -1,5 +1,5 @@
 async function loadData() {
-  const response = await fetch('./PeriodicData.json');
+  const response = await fetch('https://raw.githubusercontent.com/sweaver2112/periodic-table-data-complete/refs/heads/main/pTable.json');
   const pdata = await response.json();
   return pdata;
 }
