@@ -1,6 +1,7 @@
 body {
     display: grid;
-    justify-content: center;
+    overflow-x: scroll;
+    overflow-y: scroll;
 }
 
 #table {
@@ -8,15 +9,9 @@ body {
     grid-template-columns: repeat(3, 1fr) 0.1fr repeat(15, 1fr);
     grid-template-rows: repeat(7, 1fr) 0.2fr repeat(2, 1fr);
     border: 2px solid black;
-    width: 95vw;
-    aspect-ratio: 1.9;
+    width: 90vw;
     gap: 3px;
     padding: 9px;
-    min-width: 400px;
-    max-width: 1600px;
-    max-height: 1000px;
-    align-content: center;
-    justify-content: center;
 }
 
 .element {
@@ -24,9 +19,9 @@ body {
     display: grid;
     grid-template-rows: 0.2fr 1.7fr 0.7fr;
     align-items: center;
-    padding: 2px;
-    min-height: 75px;
-    height: 9vh;
+    padding: 1px;
+    width: 95%;
+    height: 95%;
     gap: 2px;
     user-select: none;
 }
@@ -35,10 +30,10 @@ body {
     display: grid;
     border: 1px solid black;
     background-color: #63ffb9;
-    font-size: 1.2vw;
-    height: 9vh;
-    min-height: 75px;
-    padding: 2px;
+    font-size: 80%;
+    width: 95%;
+    height: 95%;
+    padding: 1px;
     align-items: center;
     justify-content: center;
     user-select: none;
@@ -48,10 +43,10 @@ body {
     display: grid;
     border: 1px solid black;
     background-color: #ff63dd;
-    font-size: 1.2vw;
-    min-height: 75px;
-    height: 9vh;
-    padding: 2px;
+    font-size: 80%;
+    width: 95%;
+    height: 95%;
+    padding: 1px;
     align-items: center;
     justify-content: center;
     user-select: none;
@@ -59,7 +54,7 @@ body {
 
 .an {
     text-align: right;
-    font-size: 0.6vw;
+    font-size: 0.8vw;
     justify-content: center;
 }
 .es {
@@ -72,5 +67,5 @@ body {
     display: flex;
     text-align: center;
     justify-content: center;
-    font-size: 0.8vw;
+    font-size: 1vw;
 }
