@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+    padding: 10px;
+}
+
+#table {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 0.2fr repeat(15, 1fr);
+    grid-template-rows: repeat(7, 1fr) 0.2fr repeat(2, 1fr);
+    border: 3px solid black;
+    width: 95vw;
+    height: 95vh;
+    gap: 4px;
+    padding: 8px;
+}
+
+.element {
+    border: 1px solid red;
+}
