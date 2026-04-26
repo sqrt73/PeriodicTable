@@ -29,7 +29,6 @@ function addElement(c) {
 
 function color(i) {
     var c = pdata[i - 1].series;
-    console.log(c);
     if (c == "alkali metal") return "#ff6363";
     else if (c == "alkaline earth metal") return "#ff9c63";
     else if (c == "transition metal") return "#ffff63";
@@ -42,13 +41,15 @@ function color(i) {
     else return "#b5aeae";
 }
 
+function info(i) {
+    document.getElementsByClassName("info")[0].textContent = pdata[i - 1].name;
+}
+
 addElement("element");
-for (var i = 0; i < 17; i++) addElement("empty");
-for (var i = 0; i < 3; i++) addElement("element");
-for (var i = 0; i < 11; i++) addElement("empty");
-for (var i = 0; i < 8; i++) addElement("element");
-for (var i = 0; i < 11; i++) addElement("empty");
-for (var i = 0; i < 6; i++) addElement("element");
+addElement("empty");
+addElement("info");
+for (var i = 0; i < 5; i++) addElement("empty");
+for (var i = 0; i < 17; i++) addElement("element");
 for (var i = 0; i < 4; i++) {
     for (var j = 0; j < 2; j++) addElement("element");
     if (i == 2) addElement("LaLu");
@@ -71,42 +72,37 @@ var nums = document.getElementsByClassName("an");
 var names = document.getElementsByClassName("es");
 var mass = document.getElementsByClassName("am");
 
-for (var i = 1; i <= 56; i++) {
-    elements[i - 1].style.backgroundColor = color(i);
-    nums[i - 1].textContent = i;
-    names[i - 1].textContent = pdata[i - 1].symbol;
-    mass[i - 1].textContent = round(pdata[i - 1].atomic_mass, 3);
+function build(i, x) {
+    elements[i - 1].style.backgroundColor = color(x);
+    nums[i - 1].textContent = x;
+    names[i - 1].textContent = pdata[x - 1].symbol;
+    mass[i - 1].textContent = round(pdata[x - 1].atomic_mass, 3);
+    elements[i - 1].addEventListener("click", function() {
+        info(x);
+    });
+}
 
+for (var i = 1; i <= 56; i++) {
+    const x = i;
+    build(i, x);
 }
 
 for (var i = 57; i <= 73; i++) {
     var x = i + 15;
-    elements[i - 1].style.backgroundColor = color(x);
-    nums[i - 1].textContent = x;
-    names[i - 1].textContent = pdata[x - 1].symbol;
-    mass[i - 1].textContent = round(pdata[x - 1].atomic_mass, 3);
+    build(i, x);
 }
 
 for (var i = 74; i <= 88; i++) {
     var x = i + 30;
-    elements[i - 1].style.backgroundColor = color(x);
-    nums[i - 1].textContent = x;
-    names[i - 1].textContent = pdata[x - 1].symbol;
-    mass[i - 1].textContent = round(pdata[x - 1].atomic_mass, 3);
+    build(i, x);
 }
 
 for (var i = 89; i <= 103; i++) {
     var x = i - 32;
-    elements[i - 1].style.backgroundColor = color(x);
-    nums[i - 1].textContent = x;
-    names[i - 1].textContent = pdata[x - 1].symbol;
-    mass[i - 1].textContent = round(pdata[x - 1].atomic_mass, 3);
+    build(i, x);
 }
 
 for (var i = 104; i <= 118; i++) {
     var x = i - 15;
-    elements[i - 1].style.backgroundColor = color(x);
-    nums[i - 1].textContent = x;
-    names[i - 1].textContent = pdata[x - 1].symbol;
-    mass[i - 1].textContent = round(pdata[x - 1].atomic_mass, 3);
+    build(i, x);
 }
