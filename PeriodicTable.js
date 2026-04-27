@@ -42,7 +42,8 @@ function color(i) {
 }
 
 function info(i) {
-    document.getElementsByClassName("info")[0].textContent = pdata[i - 1].name;
+    document.getElementById("bigelement").textContent = pdata[i - 1].symbol;
+    document.getElementById("elementinfo").textContent = pdata[i - 1].name;
 }
 
 addElement("element");
