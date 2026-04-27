@@ -9,7 +9,7 @@ body {
 #table {
     display: grid;
     grid-template-columns: repeat(3, 1fr) 0.1fr repeat(15, 1fr);
-    grid-template-rows: repeat(7, 1fr) 0.2fr repeat(2, 1fr);
+    grid-template-rows: repeat(7, 1fr) 0.4fr repeat(2, 1fr);
     border: 2px solid black;
     width: 90vw;
     gap: 3px;
@@ -17,9 +17,21 @@ body {
 }
 
 .info {
-    border: 1px solid red;
+    display: grid;
+    gap: 5px;
+    border: 2px solid black;
+    padding: 5px;
+    grid-template-columns: 0.5fr 1fr;
     grid-column: span 11;
     grid-row: span 3
+}
+
+#bigelement {
+    border: 2px solid black;
+}
+
+#elementinfo {
+    border: 2px solid black;
 }
 
 .element {
