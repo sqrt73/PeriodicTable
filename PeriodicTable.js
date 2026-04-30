@@ -49,6 +49,10 @@ function info(i) {
 addElement("element");
 addElement("empty");
 addElement("info");
+var x = document.createElement("div"), y = document.createElement("div");
+x.id = "bigelement"; y.id = "elementinfo";
+document.getElementsByClassName("info")[0].appendChild(x);
+document.getElementsByClassName("info")[0].appendChild(y);
 for (var i = 0; i < 5; i++) addElement("empty");
 for (var i = 0; i < 17; i++) addElement("element");
 for (var i = 0; i < 4; i++) {
