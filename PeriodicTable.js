@@ -119,7 +119,8 @@ inp.addEventListener('input', (event) => {
         if ((pdata[num(i) - 1].name).toLowerCase() == val.toLowerCase().replaceAll(' ', '')) {
             if (elements[i - 1].style.color != "black") {
                 count++;
-                document.getElementsByClassName("info")[0].textContent = count + "/118 found";
+                if (count == 118) document.getElementsByClassName("info")[0].textContent = "You win!!!";
+                else document.getElementsByClassName("info")[0].textContent = count + "/118 found";
             };
             build(i, num(i));
             inp.value = "";

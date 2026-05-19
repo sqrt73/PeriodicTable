@@ -41,10 +41,9 @@ body {
 .info {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     display: flex;
-    text-align: center;
     justify-content: center;
     align-items: center;
-    font-size: 4vw;
+    font-size: 3vw;
     grid-column: span 11;
     grid-row: span 3;
     padding: 1px;
@@ -70,13 +69,13 @@ body {
     display: flex;
     text-align: center;
     justify-self: center;
-    font-size: 1.4vw;
+    font-size: 1.3vw;
 }
 .name {
     display: flex;
     text-align: center;
     justify-self: center;
-    font-size: 0.7vw;
+    font-size: 0.8vw;
 }
 .am {
     display: flex;
