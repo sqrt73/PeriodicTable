@@ -6,6 +6,9 @@ async function loadData() {
 
 const pdata = await loadData();
 
+const inp = document.getElementById('elementinp');
+inp.value = "";
+
 function round(num, d) {
     return Math.round(num * Math.pow(10, d)) / Math.pow(10, d);
 }
@@ -21,6 +24,9 @@ function addElement(c) {
         let es = document.createElement("div");
         es.className = "es";
         div.appendChild(es);
+        let name = document.createElement("div");
+        name.className = "name";
+        div.appendChild(name);
         let am = document.createElement("div");
         am.className = "am";
         div.appendChild(am);
@@ -50,10 +56,7 @@ function info(i) {
 addElement("element");
 addElement("empty");
 addElement("info");
-var x = document.createElement("div"), y = document.createElement("div");
-x.id = "bigelement"; y.id = "elementinfo";
-document.getElementsByClassName("info")[0].appendChild(x);
-document.getElementsByClassName("info")[0].appendChild(y);
+
 for (var i = 0; i < 5; i++) addElement("empty");
 for (var i = 0; i < 17; i++) addElement("element");
 for (var i = 0; i < 4; i++) {
@@ -72,67 +75,56 @@ for (var i = 0; i < 2; i++) {
 
 var elements = document.getElementsByClassName("element");
 var nums = document.getElementsByClassName("an");
-var names = document.getElementsByClassName("es");
+var symbols = document.getElementsByClassName("es");
+var names = document.getElementsByClassName("name");
 var mass = document.getElementsByClassName("am");
 var LaLu = document.getElementsByClassName("LaLu")[0];
 var AcLr = document.getElementsByClassName("AcLr")[0];
 
-LaLu.textContent = "La-Lu";
-AcLr.textContent = "Ac-Lr"; 
+function num(x) {
+    if (x <= 56) return x;
+    else if (x <= 73) return x + 15;
+    else if (x <= 88) return x + 30;
+    else if (x <= 103) return x - 32;
+    else if (x <= 118) return x - 15;
+}
 
 function build(i, x) {
     elements[i - 1].style.backgroundColor = color(x);
+    elements[i - 1].style.color = "black";
     nums[i - 1].textContent = x;
-    names[i - 1].textContent = pdata[x - 1].symbol;
+    names[i - 1].textContent = pdata[x - 1].name;
+    symbols[i - 1].textContent = pdata[x - 1].symbol;
     mass[i - 1].textContent = round(pdata[x - 1].atomic_mass, 3);
-    elements[i - 1].addEventListener("click", function() {
-        info(x);
-    });
 }
 
-for (var i = 1; i <= 56; i++) {
-    const x = i;
+function uncolor(i, x) {
     build(i, x);
+    elements[i - 1].style.backgroundColor = "white";
+    elements[i - 1].style.color = "white";
+    nums[i - 1].textContent = x;
+    symbols[i - 1].textContent = pdata[x - 1].symbol;
+    mass[i - 1].textContent = round(pdata[x - 1].atomic_mass, 3);
 }
 
-for (var i = 57; i <= 73; i++) {
-    var x = i + 15;
-    build(i, x);
+for (var i = 1; i <= 118; i++) {
+    uncolor(i, num(i))
 }
 
-for (var i = 74; i <= 88; i++) {
-    var x = i + 30;
-    build(i, x);
-}
+var count = 0;
 
-for (var i = 89; i <= 103; i++) {
-    var x = i - 32;
-    build(i, x);
-}
-
-for (var i = 104; i <= 118; i++) {
-    var x = i - 15;
-    build(i, x);
-}
-
-LaLu.addEventListener('mouseenter', () => {
-    for (var i = 89; i <= 103; i++) {
-        elements[i - 1].style.fontWeight = 'bold';
-    }
-});
-LaLu.addEventListener('mouseleave', () => {
-    for (var i = 89; i <= 103; i++) {
-        elements[i - 1].style.fontWeight = '';
+inp.addEventListener('input', (event) => {
+    const val = event.target.value;
+    for (var i = 1; i <= 118; i++) {
+        if ((pdata[num(i) - 1].name).toLowerCase() == val.toLowerCase().replaceAll(' ', '')) {
+            if (elements[i - 1].style.color != "black") {
+                count++;
+                document.getElementsByClassName("info")[0].textContent = count + "/118 found";
+            };
+            build(i, num(i));
+            inp.value = "";
+        }
     }
 });
 
-AcLr.addEventListener('mouseenter', () => {
-    for (var i = 104; i <= 118; i++) {
-        elements[i - 1].style.fontWeight = 'bold';
-    }
-});
-AcLr.addEventListener('mouseleave', () => {
-    for (var i = 104; i <= 118; i++) {
-        elements[i - 1].style.fontWeight = '';
-    }
-});
+document.getElementsByClassName("info")[0].textContent = "0/118 found";

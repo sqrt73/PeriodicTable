@@ -1,6 +1,11 @@
+html {
+    background-color: lightblue;
+}
+
 body {
     display: grid;
     gap: 10px;
+    padding: 5px;
     overflow-x: scroll;
     overflow-y: scroll;
     justify-content: center;
@@ -19,91 +24,63 @@ body {
     font-size: 4vw;
 }
 
+#elementinp {
+    height: 3vw;
+    font-size: 2vw;
+}
+
 #table {
     display: grid;
     grid-template-columns: repeat(3, 1fr) 0.1fr repeat(15, 1fr);
     grid-template-rows: repeat(7, 1fr) 0.4fr repeat(2, 1fr);
     width: 90vw;
     gap: 2px;
-    padding: 9px;
+    padding: 5px;
 }
 
 .info {
-    display: grid;
-    gap: 5px;
-    grid-template-columns: 0.5fr 1fr;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vw;
     grid-column: span 11;
     grid-row: span 3;
     padding: 1px;
 }
 
-#bigelement {
-    display: grid;
-    border: 1px solid black;
-    text-align: center;
-    align-content: center;
-    font-size: 5vw;
-}
-
-#elementinfo {
-    border: 1px solid black;
-    padding: 4px;
-}
-
 .element {
     border: 1px solid black;
     display: grid;
-    grid-template-rows: 0.2fr 1.7fr 0.7fr;
+    grid-template-rows: 0.2fr 1.7fr 0.5fr 0.6fr;
     align-items: center;
     padding: 1px;
     width: 93%;
-    height: 93%;
+    height: 95%;
     gap: 2px;
-}
-
-.element:hover {
-    border: 1px solid #d1d1d1;
-    cursor: pointer;
-}
-
-.LaLu {
-    display: grid;
-    border: 1px solid black;
-    background-color: #63ffb9;
-    font-size: 1.3vw;
-    width: 93%;
-    height: 93%;
-    padding: 1px;
-    align-items: center;
-    justify-content: center;
-}
-
-.AcLr {
-    display: grid;
-    border: 1px solid black;
-    background-color: #ff63dd;
-    font-size: 1.3vw;
-    width: 93%;
-    height: 93%;
-    padding: 1px;
-    align-items: center;
-    justify-content: center;
 }
 
 .an {
     text-align: right;
-    font-size: 0.8vw;
+    font-size: 0.7vw;
     justify-content: center;
 }
 .es {
     display: flex;
     text-align: center;
     justify-self: center;
-    font-size: 1.6vw;
+    font-size: 1.4vw;
+}
+.name {
+    display: flex;
+    text-align: center;
+    justify-self: center;
+    font-size: 0.7vw;
 }
 .am {
     display: flex;
     text-align: center;
     justify-content: center;
-    font-size: 1vw;
+    font-size: 0.7vw;
 }
