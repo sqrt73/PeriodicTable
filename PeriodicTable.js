@@ -86,7 +86,7 @@ function num(x) {
     else if (x <= 73) return x + 15;
     else if (x <= 88) return x + 30;
     else if (x <= 103) return x - 32;
-    else if (x <= 118) return x - 15;
+    else return x - 15;
 }
 
 function build(i, x) {
