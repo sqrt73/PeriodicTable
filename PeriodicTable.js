@@ -44,6 +44,7 @@ function color(i) {
 function info(i) {
     document.getElementById("bigelement").textContent = pdata[i - 1].symbol;
     document.getElementById("elementinfo").textContent = pdata[i - 1].name;
+    document.getElementById("bigelement").style.backgroundColor = color(i);
 }
 
 addElement("element");
@@ -69,13 +70,15 @@ for (var i = 0; i < 2; i++) {
     for (var j = 0; j < 15; j++) addElement("element");
 }
 
-document.getElementsByClassName("LaLu")[0].textContent = "La-Lu";
-document.getElementsByClassName("AcLr")[0].textContent = "Ac-Lr"; 
-
 var elements = document.getElementsByClassName("element");
 var nums = document.getElementsByClassName("an");
 var names = document.getElementsByClassName("es");
 var mass = document.getElementsByClassName("am");
+var LaLu = document.getElementsByClassName("LaLu")[0];
+var AcLr = document.getElementsByClassName("AcLr")[0];
+
+LaLu.textContent = "La-Lu";
+AcLr.textContent = "Ac-Lr"; 
 
 function build(i, x) {
     elements[i - 1].style.backgroundColor = color(x);
@@ -111,3 +114,25 @@ for (var i = 104; i <= 118; i++) {
     var x = i - 15;
     build(i, x);
 }
+
+LaLu.addEventListener('mouseenter', () => {
+    for (var i = 89; i <= 103; i++) {
+        elements[i - 1].style.fontWeight = 'bold';
+    }
+});
+LaLu.addEventListener('mouseleave', () => {
+    for (var i = 89; i <= 103; i++) {
+        elements[i - 1].style.fontWeight = '';
+    }
+});
+
+AcLr.addEventListener('mouseenter', () => {
+    for (var i = 104; i <= 118; i++) {
+        elements[i - 1].style.fontWeight = 'bold';
+    }
+});
+AcLr.addEventListener('mouseleave', () => {
+    for (var i = 104; i <= 118; i++) {
+        elements[i - 1].style.fontWeight = '';
+    }
+});

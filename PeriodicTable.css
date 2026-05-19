@@ -1,29 +1,40 @@
 body {
-    display: flex;
+    display: grid;
     gap: 10px;
     overflow-x: scroll;
     overflow-y: scroll;
     justify-content: center;
+    background-color: #ffffff;
+    border: 2px solid rgb(0, 0, 0);
+    user-select: none;
+}
+
+#header {
+    padding: 9px;
+    width: 90vw;
+    height: 5vw;
+    text-align: center;
+    align-content: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 4vw;
 }
 
 #table {
     display: grid;
     grid-template-columns: repeat(3, 1fr) 0.1fr repeat(15, 1fr);
     grid-template-rows: repeat(7, 1fr) 0.4fr repeat(2, 1fr);
-    border: 2px solid black;
     width: 90vw;
     gap: 2px;
     padding: 9px;
-    user-select: none;
 }
 
 .info {
     display: grid;
-    height: 99.9%;
     gap: 5px;
     grid-template-columns: 0.5fr 1fr;
     grid-column: span 11;
-    grid-row: span 3
+    grid-row: span 3;
+    padding: 1px;
 }
 
 #bigelement {
